@@ -1,0 +1,19 @@
+/* ユーザ作成 */
+GRANT ALL PRIVILEGES ON sample.* to dbuser@'localhost' IDENTIFIED BY 'dbpass';
+
+/* sampleデータベースを作成する */
+CREATE DATABASE sample;
+
+/* sampleデータベースを使用する */
+USE sample;
+
+/* userテーブルを作成する */
+CREATE TABLE user
+(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  login_id varchar(30) NOT NULL UNIQUE KEY,
+  login_password char(32) NOT NULL,
+  name varchar(30) NOT NULL,
+  is_deleted CHAR(1) NOT NULL DEFAULT '0',
+  update_date DATETIME NOT NULL
+);
