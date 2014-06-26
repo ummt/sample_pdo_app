@@ -1,7 +1,7 @@
 <?php
 require_once 'database_common.php';
 
-class database extends DatabaseCommon {
+class Database extends DatabaseCommon {
   function __construct() {
     parent::__construct();
   }
